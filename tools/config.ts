@@ -11,8 +11,8 @@ export const LIVE_RELOAD_PORT     = argv['reload-port'] || 4002;
 export const DOCS_PORT            = argv['docs-port']   || 4003;
 export const APP_BASE             = argv['base']        || '/';
 
-export const APP_TITLE            = 'Yako';
-export const APP_DESCRIPTION      = 'Quotes, quetes everywhere!!!';
+export const APP_TITLE            = 'Kaleidos Quotes';
+export const APP_DESCRIPTION      = 'Quotes, quotes everywhere!!!';
 
 export const APP_SRC              = 'app';
 export const ASSETS_SRC           = `${APP_SRC}/assets`;

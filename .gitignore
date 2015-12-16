@@ -27,6 +27,8 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 .tsdrc
+*.swo
+*.swp
 
 #IDE configuration files
 .idea

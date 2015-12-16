@@ -1,5 +1,5 @@
 {
-  "name": "yako",
+  "name": "kaleidos-quotes",
   "version": "0.0.1",
   "description": "The kaleidos quotes system.",
   "keywords": [
@@ -12,12 +12,12 @@
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bameda/yako.git"
+    "url": "git+https://github.com/bameda/kaleidos-quotes.git"
   },
   "bugs": {
-    "url": "https://github.com/bameda/yako/issues"
+    "url": "https://github.com/bameda/kaleidos-quotes/issues"
   },
-  "homepage": "https://github.com/bameda/yako#readme",
+  "homepage": "https://github.com/bameda/kaleidos-quotes#readme",
   "devDependencies": {
     "async": "^1.4.2",
     "chalk": "^1.1.1",

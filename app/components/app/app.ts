@@ -3,6 +3,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 // import {HTTP_PROVIDERS} from 'angular2/http';
 
 import {HomeCmp} from '../home/home';
+import {LoginCmp} from '../login/login';
 import {NameList} from '../../services/name_list';
 
 
@@ -10,11 +11,11 @@ import {NameList} from '../../services/name_list';
     selector: 'app',
     viewProviders: [NameList],
     templateUrl: './components/app/app.html',
-    styleUrls: ['./components/app/app.css'],
     encapsulation: ViewEncapsulation.None,
     directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-    { path: '/', component: HomeCmp, as: 'Home' }
+    { path: '/', component: HomeCmp, as: 'Home' },
+    { path: '/login', component: LoginCmp, as: 'Login' }
 ])
-export class AppCmp {}
+export class AppCmp { }
