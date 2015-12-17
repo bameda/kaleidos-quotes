@@ -1,5 +1,5 @@
 import {Injectable} from 'angular2/core';
-import {Http, Headers} from 'angular2/http';
+import {Http} from 'angular2/http';
 
 
 @Injectable()
@@ -10,19 +10,31 @@ export class CurrentUserService {
 
     getCurrentUser() {
         if (!this._user) {
-            this._user = localStorage.getItem('user');
+            this._user = JSON.parse(localStorage.getItem('user'));
         }
         return this._user;
     }
+    setCurrentUser(user: Object) {
+        this._user = user;
+        localStorage.setItem('user', JSON.stringify(this._user));
+    }
 
-    signIn(username: string, password: string) {
+    signIn(username: string, password: string, onSuccess, onError) {
         var url = 'https://intranet.kaleidos.net/api/v1/auth/login/';
-        var headers = new Headers([('Content-Type', 'application/json')]);
+
         var body = JSON.stringify({
-            'username': username,
-            'password': password
+            username: username,
+            password: password
         });
 
-        this._http.post(url, body, headers=headers);
+        this._http.post(url, body).subscribe(
+            res => {
+                this.setCurrentUser(res.json());
+                onSuccess();
+            },
+            err => {
+                onError(err.json());
+            }
+        );
     }
 }

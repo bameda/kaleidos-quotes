@@ -1,10 +1,21 @@
 <div class="login-content">
 	<img src="./assets/img/quotes-icon.png" alt="QUOTES KALEIDOS">
 
-	<form class="login-form">
-		<input type="text" class="input-text" placeholder="type your username">
-		<input type="password" class="input-text" placeholder="type your password">
-        <input type="submit" value="QUOTE THEM ALL!" class="btn-login">
-        <a href="#">Need help?</a>
+	<form class="login-form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+
+		<input type="text" class="input-text" placeholder="type your username" required
+               [(ngModel)]="model.username" ngControl="username"
+               ngControl="username"  #iusername="ngForm">
+
+		<input type="password" class="input-text" placeholder="type your password" required
+               [(ngModel)]="model.password" ngControl="password"
+               ngControl="password"  #password="ngForm">
+
+        <input type="submit" class="btn-login" [disabled]="!loginForm.form.valid"
+               value="QUOTE THEM ALL!">
+
+
+        <!-- <a href="#">Need help?</a> -->
+
 	</form>
 </div>

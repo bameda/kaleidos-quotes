@@ -1,23 +1,23 @@
 import {Component, ViewEncapsulation} from 'angular2/core';
 import {Router, RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-//import {HTTP_PROVIDERS} from 'angular2/http';
+
+import {QuotesCmp} from '../quotes/quotes';
+import {LoginCmp} from '../login/login';
 
 import {CurrentUserService} from '../../services/current_user';
-import {HomeCmp} from '../home/home';
-import {LoginCmp} from '../login/login';
 
 
 @Component({
     selector: 'app',
-    viewProviders: [CurrentUserService],
     templateUrl: './components/app/app.html',
     styleUrls: ['./components/app/app.css'],
     encapsulation: ViewEncapsulation.None,
-    directives: [ROUTER_DIRECTIVES]
+    directives: [ROUTER_DIRECTIVES],
+    viewProviders: [CurrentUserService]
 })
 @RouteConfig([
-    { path: '/', component: HomeCmp, as: 'Home' },
-    { path: '/login', component: LoginCmp, as: 'Login' }
+    { path: '/login', component: LoginCmp, as: 'Login' },
+    { path: '/quotes', component: QuotesCmp, as: 'Quotes' }
 ])
 export class AppCmp {
     constructor(
@@ -28,6 +28,8 @@ export class AppCmp {
     ngOnInit() {
         if(!this._currentUserSrv.getCurrentUser()) {
             this._router.navigate( ['Login', { }] );
+        } else {
+            this._router.navigate( ['Quotes', { }] );
         }
     }
 }
