@@ -4178,7 +4178,7 @@ input[type="checkbox"]:focus {
   color: $color-danger-dark;
 }
 .input-select {
-  background-image: url("./assets/svg/arrow-down.svg");
+  background-image: url("../img/arrow-down.svg");
   background-repeat: no-repeat;
   background-position: 92% 48%;
   background-size: 10px;

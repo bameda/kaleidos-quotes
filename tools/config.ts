@@ -46,14 +46,12 @@ export const NPM_DEPENDENCIES = [
   { src: 'rxjs/bundles/Rx.min.js', inject: 'libs', dest: LIB_DEST },
   { src: 'angular2/bundles/angular2.min.js', inject: 'libs', dest: LIB_DEST },
   { src: 'angular2/bundles/router.js', inject: 'libs', dest: LIB_DEST }, // use router.min.js with alpha47
-  { src: 'angular2/bundles/http.min.js', inject: 'libs', dest: LIB_DEST },
-
-  { src: 'bootstrap/dist/css/bootstrap.min.css', inject: true, dest: CSS_DEST }
+  { src: 'angular2/bundles/http.min.js', inject: 'libs', dest: LIB_DEST }
 ];
 
 // Declare local files that needs to be injected
 export const APP_ASSETS = [
-  { src: `${ASSETS_SRC}/main.css`, inject: true, dest: CSS_DEST }
+  { src: `${ASSETS_SRC}/css/main.css`, inject: true, dest: CSS_DEST }
 ];
 
 NPM_DEPENDENCIES
